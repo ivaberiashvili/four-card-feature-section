@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root{
+    --red :#EA5454;
+    --cyan :#44D3D2;
+    --yellow : #FCAE4A;
+    --blue : #549EF2;
+    --grey : #4D4F62;
+    --bg-white : #FAFAFA;
+}
+*{box-sizing: border-box;}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-white);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+/* TYPE */
+
+h1,h2,p {color: var(--grey);}
+p {opacity:0.5;}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0.17px;
+    text-align: center;
+    margin-bottom:13px;    
+}
+
+.heading-light{
+    font-weight: 275;
+    margin-bottom: unset;
+}
+h2{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom: 6px; 
+}
+
+.para-big{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0.1px;
+    text-align: center;  
+}
+
+.para-small {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.09px;
+    text-align: left;
+}
+
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.header-container{
+    margin-top: 85px;
+    margin-bottom: 76px;
+    max-width: 311px;
+}
+
+@media(min-width:768px){
+    h1{
+        font-size: 36px;
+        line-height: 54px;
+        letter-spacing: 0.25px;
+    }
+    .header-container{
+        margin-top: 80px;
+        margin-bottom: 64px;
+        max-width: 540px;
+    }    
+}
+
+/* CARDS */
+.cards-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 53px;
+    max-width: 311px;
+}
+.card-holder{
+    height: 222px;
+    /* width: 100%; */
+    border-radius: 8px;
+    box-shadow: 0px 15px 30px -11px #83A6D280; 
+}
+.holder-1{
+    background-color:var(--cyan);  
+}
+.holder-2{
+    background-color:var(--red);
+    /* margin-top:-100px; */
+}
+.holder-3{
+    background-color:var(--yellow);
+}
+.holder-4{
+    background-color:var(--blue);
+    /* margin-top:-100px; */
+}
+
+.card{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding:28px;
+    clip-path: inset(3.55px 0 0 0);
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+.icon{
+    position: absolute;
+    bottom:28px;
+    right:28px;
+}
+
+@media(min-width:768px){
+    .cards-container{
+        display:grid;
+        /* To solve the problem of gap enlarging the container, I subtract half of gap from each grid column*/
+        grid-template-columns: calc(50% - 12.5px) calc(50% - 12.5px);
+        margin-bottom:55px;
+        max-width:calc(311px*2);
+    }
+}
+
+@media(min-width:1200px){
+    .cards-container{
+        gap:30px;
+        /* again, total gap equals 60, so I subtract 60/columns to each column*/
+        grid-template-columns: calc(33.33% - 20px) calc(33.33% - 20px) calc(33.33% - 20px);
+        max-width:calc((350px*3) + 60px);
+    }
+    .card-holder{
+        height: 250px;
+    }
+    .holder-1{
+        margin-bottom: -280px;
+    }
+    .holder-3{
+        grid-column: 2/3;
+    }
+    .holder-4{
+        margin-top: -280px;
+        grid-column: 3/4;
+    }
+   .card{
+        padding: 32px;
+    }
+    .icon{
+        bottom: 32px;
+        right: 32px;
+    }
+}
